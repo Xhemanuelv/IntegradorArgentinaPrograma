@@ -19,8 +19,6 @@ public class Ronda {
         this.ronda = ronda;
         this.partidos = new ArrayList();
     }
-    
-    
 
     public int getNumeroRonda() {
         return numeroRonda;
@@ -46,14 +44,18 @@ public class Ronda {
         this.partidos = partidos;
     }
 
-    public void agregarPartido(Partido partido){
-        
+    public void agregarPartido(Partido partido) {
+        this.partidos.add(partido);
+
     }
-    
-    
+
+    /**
+     * Aun no se que deberia llevar esto
+     *
+     * @return
+     */
     public int puntos() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
-    
+
 }

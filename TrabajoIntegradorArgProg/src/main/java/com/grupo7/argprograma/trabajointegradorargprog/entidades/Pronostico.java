@@ -1,8 +1,11 @@
 package com.grupo7.argprograma.trabajointegradorargprog.entidades;
 
 import com.grupo7.argprograma.trabajointegradorargprog.utils.ResultadoEnum;
+import java.util.Objects;
 
 public class Pronostico {
+
+    private Persona participante;
 
     private Partido partido;
 
@@ -11,13 +14,18 @@ public class Pronostico {
     private ResultadoEnum resultado;
 
     /**
-     * Devuelve 1 si el equipo introducido es el GANADOR o EMPATE y 0 si no lo
-     * es
+     * Devuelve 1 si el equipo introducido y el resultado coincide o 0 de no
+     * coincidir
      *
      * @return
      */
     public int puntos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (this.resultado.equals(this.partido.resultado(equipo))) {
+            return 1;
+        } else {
+            return 0;
+        }
+
     }
 
     public Pronostico() {
@@ -27,6 +35,14 @@ public class Pronostico {
         this.partido = partido;
         this.equipo = equipo;
         this.resultado = resultado;
+    }
+
+    public Persona getParticipante() {
+        return participante;
+    }
+
+    public void setParticipante(Persona participante) {
+        this.participante = participante;
     }
 
     public Partido getPartido() {
@@ -51,6 +67,28 @@ public class Pronostico {
 
     public void setResultado(ResultadoEnum resultado) {
         this.resultado = resultado;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.resultado);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pronostico other = (Pronostico) obj;
+        return this.resultado == other.resultado;
     }
 
     @Override

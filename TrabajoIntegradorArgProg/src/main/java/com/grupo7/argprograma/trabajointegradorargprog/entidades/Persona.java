@@ -93,4 +93,9 @@ public class Persona {
         return Objects.equals(this.id, other.id);
     }
 
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", puntaje=" + puntaje + '}';
+    }
+
 }

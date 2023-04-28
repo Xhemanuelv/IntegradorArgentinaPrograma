@@ -19,7 +19,7 @@ public class CargarDatosImpl implements CargarDatos {
     @Override
     public void agregarEquipo() {
         Equipo equipo = new Equipo();
-        equipo.setId(equipos.size() + 1);
+       // equipo.setId(equipos.size() + 1);
         System.out.println("Ingrese el nombre del equipo");
         equipo.setNombre(leer.nextLine());
         equipo.setDescripcion("");

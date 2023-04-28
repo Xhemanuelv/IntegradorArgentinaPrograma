@@ -4,29 +4,31 @@ import java.util.Objects;
 
 public class Equipo {
 
-    private int id;
-
     private String nombre;
 
     private String descripcion;
 
+    //    private int id;
     public Equipo() {
     }
 
-    public Equipo(int id, String nombre, String descripcion) {
-        this.id = id;
+    public Equipo(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Equipo(String nombre, String descripcion) {
+
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     public String getNombre() {
         return nombre;
     }
@@ -46,8 +48,7 @@ public class Equipo {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + this.id;
-        hash = 83 * hash + Objects.hashCode(this.nombre);
+        hash = 29 * hash + Objects.hashCode(this.nombre);
         return hash;
     }
 
@@ -63,15 +64,12 @@ public class Equipo {
             return false;
         }
         final Equipo other = (Equipo) obj;
-        if (this.id != other.id) {
-            return false;
-        }
         return Objects.equals(this.nombre, other.nombre);
     }
 
     @Override
     public String toString() {
-        return "Equipo{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
+        return "Equipo{" + "nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
 
 }
