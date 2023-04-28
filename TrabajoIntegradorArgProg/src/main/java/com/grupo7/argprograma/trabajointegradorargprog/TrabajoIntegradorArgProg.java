@@ -1,13 +1,16 @@
-
 package com.grupo7.argprograma.trabajointegradorargprog;
+
+import com.grupo7.argprograma.trabajointegradorargprog.servicios.impl.Entrega1;
 
 /**
  *
- * @author xhema
+ * @author Emanuel Villarin
  */
 public class TrabajoIntegradorArgProg {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Entrega1 primerEntrega = new Entrega1();
+
+        primerEntrega.presentacion1();
     }
 }

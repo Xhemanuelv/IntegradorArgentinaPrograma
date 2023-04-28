@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Ronda {
 
-    private int numeroRonda;//1,2,3,4
+    private int id;//1,2,3,4
 
     private String ronda;//Octavos,cuartos, semi y final
 
@@ -15,17 +15,17 @@ public class Ronda {
     }
 
     public Ronda(int numeroRonda, String ronda) {
-        this.numeroRonda = numeroRonda;
+        this.id = numeroRonda;
         this.ronda = ronda;
         this.partidos = new ArrayList();
     }
 
     public int getNumeroRonda() {
-        return numeroRonda;
+        return id;
     }
 
     public void setNumeroRonda(int numeroRonda) {
-        this.numeroRonda = numeroRonda;
+        this.id = numeroRonda;
     }
 
     public String getRonda() {
